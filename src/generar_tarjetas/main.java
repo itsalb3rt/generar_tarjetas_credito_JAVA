@@ -15,13 +15,16 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String [] nuevastarjetas_validas = new String[100];
+        //Numero de tarjetas que queremos
+        int numero_tarjetas_generar = 5;
+        String [] nuevastarjetas_validas = new String[numero_tarjetas_generar+1];
         String tarjetas_validas = "";
         Generar_tarjetas nuevatarjeta = new Generar_tarjetas();
         Validar_tarjeta validar = new Validar_tarjeta();
         int contador_total_iteraciones = 0;
-        int contador_tarjetas_validas = 0;
-        while(contador_tarjetas_validas <= 99){
+        int contador_tarjetas_validas = 0;        
+        //Indicar en el while cuantas tarjetas se quieren
+        while(contador_tarjetas_validas <= numero_tarjetas_generar){
         String tarjeta_generada = "4";
             for(int i = 0; i<15;i++){            
                 tarjeta_generada += Integer.toString(nuevatarjeta.generarAleatorio(1, 9));//Generando un nuevo numero                
